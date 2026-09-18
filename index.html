@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licenciatura en Nutrición - Universidad Internacional de Guanajuato</title>
+    <!-- Favicon -->
+    <link rel="icon" href="logoUIG.png" type="image/png">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1A365D;
+            --primary-light: #2B6CB0;
+            --secondary: #2C7A7B;
+            --accent: #319795;
+            --bg-light: #F7FAFC;
+            --surface: #FFFFFF;
+            --text-main: #2D3748;
+            --text-muted: #718096;
+            --border: #E2E8F0;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* HEADER & NAVBAR */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(44, 122, 123, 0.3);
+        }
+
+        .logo-text h1 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 0.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            padding: 0.5rem 0.9rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            background-color: #E6FFFA;
+        }
+
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--primary);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8.5px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8.5px) rotate(-45deg);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.85) 50%, rgba(15, 118, 110, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #E2E8F0;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-item h3 {
+            font-size: 1.8rem;
+            color: #38BDF8;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            margin-bottom: 0;
+            color: #94A3B8;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* CARDS GRID */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .info-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: #E6FFFA;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+        }
+
+        .info-card ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .info-card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* TABS SEMESTRES */
+        .semesters-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .semester-tabs {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            width: 100%;
+        }
+
+        .tab-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            background: #EDF2F7;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* SUBJECTS GRID */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .subject-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .subject-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .subject-code {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--secondary);
+            background: #E6FFFA;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .subject-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .subject-details {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .subject-details div {
+            margin-bottom: 0.3rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-light);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+        }
+
+        .btn-download-main {
+            background: linear-gradient(135deg, #2C7A7B, #2B6CB0);
+            color: white;
+            font-size: 0.9rem;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--radius);
+            max-width: 650px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            z-index: 10;
+        }
+
+        /* Modal específico para Organigrama */
+        .modal-organigrama .modal-content {
+            max-width: 95vw;
+            width: 1100px;
+            height: 90vh;
+            max-height: 90vh;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-organigrama .modal-content h2 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.4rem;
+            padding-right: 2rem;
+        }
+
+        .pdf-container {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .pdf-container iframe,
+        .pdf-container embed {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 2rem 1.5rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #A0AEC0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            .nav-container { 
+                flex-direction: row;
+                gap: 1rem; 
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                box-shadow: var(--shadow-md);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.35s ease;
+            }
+
+            nav.open {
+                max-height: 400px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 0.5rem 0;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                padding: 0.9rem 1.5rem;
+                border-radius: 0;
+            }
+
+            nav a:hover {
+                background-color: #E6FFFA;
+                color: var(--accent);
+            }
+
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+
+            .logo-text span {
+                font-size: 0.7rem;
+            }
+
+            .logo-img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .modal-organigrama .modal-content {
+                width: 100%;
+                height: 95vh;
+                max-height: 95vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="logoUIG.png" alt="Logo Universidad Internacional de Guanajuato" class="logo-img">
+                <div class="logo-text">
+                    <h1>Universidad Internacional de Guanajuato</h1>
+                    <span>EXCELENCIA Y CALIDAD ACADÉMICA</span>
+                </div>
+            </div>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#perfil">Perfil</a></li>
+                    <li><a href="#modelo">Modelo Curricular</a></li>
+                    <li><a href="#plan-estudios">Plan de Estudios</a></li>
+                    <li><a href="#" id="organigramaLink">Organigrama</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <span class="badge"><i class="fa-solid fa-award"></i> Clave del Plan de Estudios: 2026</span>
+            <h2>Licenciatura en Nutrición</h2>
+            <p>Formando profesionales líderes e integrales en fisiología, metabolismo, evaluación nutricional y soberanía alimentaria.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>8</h3>
+                    <p>Semestres (Ciclos)</p>
+                </div>
+                <div class="stat-item">
+                    <h3>16</h3>
+                    <p>Semanas por Ciclo</p>
+                </div>
+                <div class="stat-item">
+                    <h3>48 hrs</h3>
+                    <p>Carga Semanal Máx.</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Escolarizada</h3>
+                    <p>Modalidad Educativa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container">
+
+        <!-- RESUMEN PROGRAMA -->
+        <section class="grid-2" id="perfil">
+            <div class="info-card">
+                <div class="card-icon"><i class="fa-solid fa-user-plus"></i></div>
+                <h3>Perfil de Ingreso</h3>
+                <p style="margin-bottom: 1rem; font-size: 0.95rem; color: var(--text-muted);">
+                    El aspirante a ingresar a la Licenciatura en Nutrición deberá ser una persona interesada en el cuidado de la salud y el bienestar integral.
+                </p>
+                <ul>
+                    <li>Disposición para adquirir conocimientos científicos en ciencias de la salud.</li>
+                    <li>Interés por la prevención, atención y educación nutricional.</li>
+                    <li>Actitud responsable, ética, humanista y comprometida socialmente.</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                <h3>Perfil de Egreso</h3>
+                <p style="margin-bottom: 1rem; font-size: 0.95rem; color: var(--text-muted);">
+                    El egresado desarrollará una sólida base de conocimientos en fisiología, metabolismo humano y química de nutrientes.
+                </p>
+                <ul>
+                    <li>Evaluaciones nutricionales individuales y grupales con planes personalizados.</li>
+                    <li>Intervención en dietología y preparación de atletas.</li>
+                    <li>Diseño e innovación en servicios de alimentos de alta calidad.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PLAN DE ESTUDIOS INTERACTIVO -->
+        <section id="plan-estudios">
+            <div class="section-title">
+                <h2>Plan de Estudios y Temarios</h2>
+                <p>Explora el mapa curricular clasificado por semestres y descarga los temarios oficiales</p>
+            </div>
+
+            <!-- BOTONES DE ANEXOS GENERALES -->
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap;">
+                <a class="btn btn-download-main" href="Anexo 1.pdf" download>
+                    <i class="fa-solid fa-file-pdf"></i> Descargar Anexo 1 (PDF)
+                </a>
+                <a class="btn btn-download-main" href="Anexo_2_Licenciatura_Nutriciónn.xlsx" download>
+                    <i class="fa-solid fa-file-excel"></i> Descargar Anexo 2 (Excel)
+                </a>
+            </div>
+
+            <div class="semesters-header">
+                <div class="semester-tabs" id="semesterTabs">
+                    <!-- Generado dinámicamente -->
+                </div>
+            </div>
+
+            <!-- GRID DE MATERIAS -->
+            <div class="subjects-grid" id="subjectsGrid">
+                <!-- Generado dinámicamente -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL TEMARIO DETALLADO -->
+    <div class="modal" id="subjectModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <span class="subject-code" id="modalCode">LNB-101</span>
+            <h2 id="modalTitle" style="color: var(--primary); margin-bottom: 1rem;">Título de la Materia</h2>
+            
+            <div style="background: var(--bg-light); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <strong>Horas con Académico:</strong> <span id="modalHA">128 hrs</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <strong>Horas Independientes:</strong> <span id="modalHI">64 hrs</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <strong>Créditos Totales:</strong> <span id="modalCR">12</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                    <strong>Seriación:</strong> <span id="modalSeriacion">Ninguna</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <strong>Instalaciones:</strong> <span id="modalInstalaciones">Aula / Laboratorio</span>
+                </div>
+            </div>
+
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Contenido General del Temario</h4>
+            <ul id="modalTopics" style="margin-left: 1.2rem; font-size: 0.95rem; color: var(--text-main); margin-bottom: 1.5rem;">
+                <!-- Tópicos cargados dinámicamente -->
+            </ul>
+
+            <button class="btn btn-primary" style="width: 100%;" onclick="downloadSingleSubject()">
+                <i class="fa-solid fa-download"></i> Descargar PDF Oficial de la Materia
+            </button>
+        </div>
+    </div>
+
+    <!-- MODAL ORGANIGRAMA -->
+    <div class="modal modal-organigrama" id="organigramaModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeOrganigramaModal()">&times;</span>
+            <h2><i class="fa-solid fa-sitemap"></i> Estructura Jerárquica de la Universidad</h2>
+            <div class="pdf-container">
+                <iframe src="Organigrama_UIG.pdf" title="Organigrama Universidad Internacional de Guanajuato"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3 style="margin-bottom: 1rem;">🎓 Universidad Internacional de Guanajuato</h3>
+                <p style="font-size: 0.9rem; color: #A0AEC0;">
+                    ⚙️ Formando profesionales comprometidos con la salud, la investigación y la excelencia académica.
+                </p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1rem;">Información Institucional</h4>
+                <p style="font-size: 0.85rem; color: #A0AEC0; margin-bottom: 0.5rem;"><strong>🗓️ Duración del Ciclo:</strong> 16 Semanas</p>
+                <p style="font-size: 0.85rem; color: #A0AEC0;"><strong>📖 Modalidad:</strong> Escolarizada</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Universidad Internacional de Guanajuato - Licenciatura en Nutrición.
+        </div>
+    </footer>
+
+    <!-- SCRIPT JS -->
+    <script>
+        // Mapeo exacto de las carpetas de cada semestre según la estructura de archivos
+        const semesterFolders = {
+            1: "1er Sem-Héctor",
+            2: "2do Sem-Jeyli",
+            3: "3er Sem-Itzia",
+            4: "4to sem-Lizzie",
+            5: "5to Sem-Nallely",
+            6: "6to Sem-Astrid",
+            7: "7mo Sem-Arantxa",
+            8: "8vo Sem-Xavi"
+        };
+
+        const curriculumData = [
+            {
+                semestre: 1,
+                materias: [
+                    { clave: "LNB-101", pdfName: "LNB-101_Identidad_Universitaria_Formacion_Humana.pdf", nombre: "Identidad Universitaria y Formación Humana", ha: 128, hi: 64, cr: 12, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Historia e identidad institucional", "Ética universitaria", "Valores y compromiso social", "Desarrollo humano y vocación"] },
+                    { clave: "LNB-102", pdfName: "LNB-102_Anatomia_y_Fisiologia_Humana.pdf", nombre: "Anatomía y Fisiología Humana", ha: 128, hi: 64, cr: 12, seriacion: "Ninguna", instalaciones: "Aula / Laboratorio", temario: ["Sistemas corporales y homeostasis", "Sistema digestivo y cardiovascular", "Sistema endocrino y renal", "Anatomía funcional aplicada"] },
+                    { clave: "LNB-103", pdfName: "LNB-103_Quimica_de_la_Nutricion.pdf", nombre: "Química de la Nutrición", ha: 128, hi: 64, cr: 12, seriacion: "Ninguna", instalaciones: "Aula / Laboratorio", temario: ["Estructura química de macronutrientes", "Soluciones y pH orgánico", "Reacciones bioquímicas fundamentales", "Enzimas y coenzimas"] },
+                    { clave: "LNB-104", pdfName: "LNB-104_Biologia_Celular.pdf", nombre: "Biología Celular", ha: 128, hi: 64, cr: 12, seriacion: "Ninguna", instalaciones: "Aula / Laboratorio", temario: ["Estructura y función celular", "Membrana y transporte de nutrientes", "Genética celular y síntesis proteica", "Respiración celular y energía"] },
+                    { clave: "LNB-105", pdfName: "LNB-105_Fundamentos_de_la_Nutricion.pdf", nombre: "Fundamentos de la Nutrición", ha: 128, hi: 64, cr: 12, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Historia de la ciencia de la nutrición", "Leyes de la alimentación", "Clasificación de nutrientes y alimentos", "Requerimientos energéticos básicos"] },
+                    { clave: "LNB-106", pdfName: "LNB-106_Comunicacion_Academica_en_Ciencias_de_la_Salud.pdf", nombre: "Comunicación Académica en Ciencias de la Salud", ha: 128, hi: 64, cr: 12, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Lectura y redacción científica", "Búsqueda bibliográfica especializada", "Presentación oral de trabajos", "Terminología médica básica"] }
+                ]
+            },
+            {
+                semestre: 2,
+                materias: [
+                    { clave: "LNSHE-206", pdfName: "LNSHE-206 Humanística II seg semestre.pdf", nombre: "Humanística II. La persona y su compromiso con el entorno", ha: 128, hi: 64, cr: 12, seriacion: "LNB-101", instalaciones: "Aula", temario: ["Análisis del entorno social", "Responsabilidad comunitaria", "Diversidad cultural", "Sostenibilidad humana"] },
+                    { clave: "LNSC-207", pdfName: "LNSC-207 Fisiología de la Nutrición seg sem.pdf", nombre: "Fisiología de la Nutrición", ha: 128, hi: 64, cr: 12, seriacion: "LNB-102", instalaciones: "Aula / Laboratorio", temario: ["Digestión y absorción de macronutrientes", "Regulación neuroendocrina del apetito", "Metabolismo tisular", "Excreción y balance hídrico"] },
+                    { clave: "LNCS-208", pdfName: "LNCS-208 Introducción a la Evaluación del Estado Nutricional seg sem.pdf", nombre: "Introducción a la Evaluación del Estado Nutricional", ha: 128, hi: 64, cr: 12, seriacion: "LNB-105", instalaciones: "Aula / Laboratorio", temario: ["Antropometría básica", "Indicadores clínicos y dietéticos", "Historia clínico-nutricional", "Técnicas de medición en adultos"] },
+                    { clave: "LNSHE-209", pdfName: "LNSHE-209 segundo semestre Antropología y Soberanía Alimentaria.pdf", nombre: "Antropología y Soberanía Alimentaria", ha: 128, hi: 64, cr: 12, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Cultura y comportamiento alimentario", "Historia de la gastronomía regional", "Soberanía y seguridad alimentaria", "Evolución de las dietas humanas"] },
+                    { clave: "LNCA-210", pdfName: "LNCA-210 Quimica de alimentos SEG SEM.pdf", nombre: "Química de Alimentos", ha: 128, hi: 64, cr: 12, seriacion: "LNB-103", instalaciones: "Aula / Laboratorio", temario: ["Propiedades fisicoquímicas del agua", "Lípidos, carbohidratos y proteínas alimentarias", "Pardeamiento enzimático y no enzimático", "Aditivos alimentarios"] },
+                    { clave: "LNGII-211", pdfName: "LNGII-211 segundo semestre principios de la administración.pdf", nombre: "Principios de la Administración", ha: 128, hi: 64, cr: 12, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Proceso administrativo básico", "Planeación y organización", "Dirección y control de proyectos", "Gestión de recursos organizacionales"] }
+                ]
+            },
+            {
+                semestre: 3,
+                materias: [
+                    { clave: "LNB-301", pdfName: "LNB-301-Introducción a la Evaluación del Estado Nutricional.pdf", nombre: "Humanística III. La persona y el compromiso con su ser trascendente", ha: 80, hi: 40, cr: 7.5, seriacion: "LNSHE-206", instalaciones: "Aula", temario: ["Dimensiones espirituales y éticas", "Proyecto de vida", "Ética y trascendencia", "Sentido de vida profesional"] },
+                    { clave: "LNB-302", pdfName: "LNB-302-Desarrollo Social.pdf", nombre: "Desarrollo Social", ha: 80, hi: 40, cr: 7.5, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Indicadores de bienestar social", "Políticas de inclusión", "Pobreza y desnutrición", "Programas gubernamentales de nutrición"] },
+                    { clave: "LNB-303", pdfName: "LNB-303-Alimentos y Bebidas Nacionales e Internacionales.pdf", nombre: "Alimentos y Bebidas Nacionales e Internacionales", ha: 112, hi: 56, cr: 10.5, seriacion: "Ninguna", instalaciones: "Aula / Laboratorio", temario: ["Patrones alimentarios globales", "Técnicas culinarias tradicionales", "Valor nutricional de platillos colectivos", "Bebidas e hidratación saludable"] },
+                    { clave: "LNB-304", pdfName: "LNB-304-Bioquímica metabólica I.pdf", nombre: "Bioquímica Metabólica I", ha: 112, hi: 56, cr: 10.5, seriacion: "LNCA-210", instalaciones: "Aula", temario: ["Rutas metabólicas de carbohidratos", "Gluconeogénesis y glucogénesis", "Ciclo de Krebs y cadena respiratoria", "Regulación hormonal metabólica"] },
+                    { clave: "LNB-305", pdfName: "LNB-305-Nutrición y dietética en el ciclo de la vida I.pdf", nombre: "Nutrición y Dietética en el Ciclo de Vida I", ha: 112, hi: 56, cr: 10.5, seriacion: "LNCS-208", instalaciones: "Aula", temario: ["Nutrición preconcepcional y embarazo", "Lactancia materna", "Nutrición en lactantes y lactancia complementaria", "Nutrición en etapa preescolar y escolar"] },
+                    { clave: "LNB-306", pdfName: "LNB-306-Psicología social y conducta alimentaria.pdf", nombre: "Psicología Social y Conducta Alimentaria", ha: 80, hi: 40, cr: 7.5, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Factores psicológicos de la ingesta", "Trastornos de la conducta alimentaria (TCA)", "Influencia sociocultural y medios", "Técnicas de modificación conductual"] },
+                    { clave: "LNB-307", pdfName: "LNB-307-Microbiología de alimentos.pdf", nombre: "Microbiología de Alimentos", ha: 112, hi: 56, cr: 10.5, seriacion: "Ninguna", instalaciones: "Aula / Laboratorio", temario: ["Microorganismos patógenos y alteradores", "Enfermedades transmitidas por alimentos (ETA)", "Conservación y control microbiológico", "Análisis e higiene alimentaria"] },
+                    { clave: "LNB-308", pdfName: "LNB-308-Administración de servicios de alimentos.pdf", nombre: "Administración de Servicios de Alimentos", ha: 112, hi: 56, cr: 10.5, seriacion: "LNGII-211", instalaciones: "Aula / Laboratorio", temario: ["Operación y diseño de comedores", "Control de insumos y costos", "Normas de inocuidad e higiene", "Gestión de personal de cocina"] }
+                ]
+            },
+            {
+                semestre: 4,
+                materias: [
+                    { clave: "LNB-401", pdfName: "LNB-401_Humanística_IV.pdf", nombre: "Humanística IV. La persona y el compromiso con el otro cercano", ha: 96, hi: 48, cr: 9, seriacion: "LNB-301", instalaciones: "Aula", temario: ["Empatía en la relación médico-paciente", "Comunicación asertiva", "Manejo de situaciones complejas", "Ética interrelacional"] },
+                    { clave: "LNB-402", pdfName: "LNB-402_pensamiento_critico.pdf", nombre: "Pensamiento Crítico", ha: 96, hi: 48, cr: 9, seriacion: "LNB-402", instalaciones: "Aula", temario: ["Lógica y argumentación", "Resolución de problemas en salud", "Análisis crítico de literatura científica", "Toma de decisiones fundamentada"] },
+                    { clave: "LNCS-31", pdfName: "LNCS-31_Bioquimica_metabolica_II.pdf", nombre: "Bioquímica Metabólica II", ha: 96, hi: 48, cr: 9, seriacion: "LNB-304", instalaciones: "Aula / Laboratorio", temario: ["Metabolismo de lípidos y lipoproteínas", "Metabolismo de aminoácidos y nitrógeno", "Integración metabólica en ayuno y alimentación", "Estrés oxidativo y micronutrientes"] },
+                    { clave: "LNCS-423", pdfName: "LNCS-423_nutricion_y_dietetica_II.pdf", nombre: "Nutrición y Dietética en el Ciclo de Vida II", ha: 96, hi: 48, cr: 9, seriacion: "LNCS-423", instalaciones: "Aula", temario: ["Nutrición en el adolescente", "Nutrición en el adulto joven y maduro", "Nutrición en el adulto mayor", "Prescripción dietética personalizada"] },
+                    { clave: "LNCA-424", pdfName: "LNCA-424_produccion_de_alimentos.pdf", nombre: "Producción de Alimentos", ha: 96, hi: 48, cr: 9, seriacion: "LNCA-424", instalaciones: "Aula / Laboratorio", temario: ["Sistemas de producción agrícola y pecuaria", "Procesamiento industrial de alimentos", "Control de calidad en producción", "Tecnologías emergentes en alimentos"] },
+                    { clave: "LNCA-425", pdfName: "LNCA-425_Analisis_de_Alimentos.pdf", nombre: "Análisis de Alimentos", ha: 96, hi: 48, cr: 9, seriacion: "LNCA-425", instalaciones: "Laboratorio", temario: ["Métodos bromatológicos", "Determinación de humedad, cenizas y grasa", "Análisis de proteínas y carbohidratos", "Etiquetado nutrimental oficial"] },
+                    { clave: "LNGII-426", pdfName: "LNGII-426_Practicas_en_Servicios_de_Alimentos.pdf", nombre: "Prácticas en Servicios de Alimentos", ha: 96, hi: 48, cr: 9, seriacion: "LNGII-426", instalaciones: "Laboratorio / Comedor", temario: ["Inmersión operativa en servicios alimentarios", "Supervisión de cadenas de frío", "Implementación de sistemas HACCP", "Evaluación de la calidad del servicio"] }
+                ]
+            },
+            {
+                semestre: 5,
+                materias: [
+                    { clave: "LNSHE-527", pdfName: "LNSHE-527-HUMANISTA.pdf", nombre: "Humanística V. La persona y su compromiso consigo misma", ha: 80, hi: 40, cr: 7.5, seriacion: "LNB-401", instalaciones: "Aula", temario: ["Autocuidado del profesional de salud", "Resiliencia e inteligencia emocional", "Prevención del síndrome de Burnout", "Desarrollo del liderazgo profesional"] },
+                    { clave: "LNCS-503-4", pdfName: "LNCS-503-4 Fisiopatologia.pdf", nombre: "Fisiopatología", ha: 96, hi: 48, cr: 9, seriacion: "LNSC-207", instalaciones: "Aula / Laboratorio", temario: ["Fisiopatología gastrointestinal", "Fisiopatología cardiovascular y renal", "Fisiopatología endocrina y metabólica", "Respuesta inflamatoria e inmunológica"] },
+                    { clave: "LNCS-531", pdfName: "LNCS-531-Proceso de cuidado nutricional.pdf", nombre: "Proceso de Cuidado Nutricional", ha: 112, hi: 56, cr: 10.5, seriacion: "LNCS-208", instalaciones: "Aula", temario: ["Estandarización NCP (Proceso de Cuidado Nutricional)", "Diagnóstico nutricional PES", "Estrategias de intervención nutricional", "Monitoreo y evaluación clínica"] },
+                    { clave: "LNCA-533", pdfName: "LNCA-533-tecnologia de alimento.pdf", nombre: "Tecnología de Alimentos", ha: 96, hi: 48, cr: 9, seriacion: "LNCA-210", instalaciones: "Laboratorio", temario: ["Métodos de conservación térmica y no térmica", "Empaque y vida de anaquel", "Biotecnología alimentaria", "Innovación en procesamiento de ingredientes"] },
+                    { clave: "LNCS-534", pdfName: "LNCS-534-Calidad atencion seguridad paciente.pdf", nombre: "Calidad de Atención y Seguridad del Paciente", ha: 80, hi: 40, cr: 7.5, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Metas internacionales de seguridad del paciente", "Gestión de riesgos hospitalarios", "Calidad en la atención nutricional", "Ética clínica y consentimiento informado"] },
+                    { clave: "LNCA-425-D", pdfName: "LNCA-425-Interdisciplinaria I Dignidad humana.pdf", nombre: "Interdisciplinaria I. Dignidad Humana y Salud", ha: 80, hi: 40, cr: 7.5, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Bioética y derechos del paciente", "Dignidad en la salud pública", "Enfoque multidisciplinario en salud", "Humanización de la práctica médica"] },
+                    { clave: "LNCA-425-S", pdfName: "LNCA-425-Sistema economico y politica publica.pdf", nombre: "Sistema Económico y Políticas Públicas", ha: 80, hi: 40, cr: 7.5, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Economía de la salud", "Sistemas de salud en México", "Formulación de políticas en nutrición", "Impacto socioeconómico de la malnutrición"] },
+                    { clave: "LNSHE-532", pdfName: "LNSHE-532-Toma de decisiones etico profesionales.pdf", nombre: "Toma de Decisiones Ético Profesional", ha: 80, hi: 40, cr: 7.5, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Dilemas éticos en la práctica clínica", "Códigos deontológicos de la nutrición", "Responsabilidad legal del nutriólogo", "Estudios de caso éticos complejos"] }
+                ]
+            },
+            {
+                semestre: 6,
+                materias: [
+                    { clave: "LNCS-635", pdfName: "LNCS-635-Nutricion en situaciones especiales de salud.pdf", nombre: "Nutrición en Situaciones Especiales de Salud", ha: 112, hi: 56, cr: 10.5, seriacion: "LNCS-503-4", instalaciones: "Aula", temario: ["Nutrición en oncología y VIH", "Nutrición en paciente pediátrico complejo", "Nutrición en discapacidades motoras", "Nutrición en errores innatos del metabolismo"] },
+                    { clave: "LNCS-638", pdfName: "LNCS-638-Clinica de dietoterapia I.pdf", nombre: "Clínica de Dietoterapia I", ha: 112, hi: 56, cr: 10.5, seriacion: "LNCS-531", instalaciones: "Aula / Laboratorio", temario: ["Manejo nutricional en gastroenterología", "Dietoterapia en enfermedades hepáticas y pancreáticas", "Dietas modificadas en consistencia y osmolaridad", "Casos clínicos de simulación"] },
+                    { clave: "LNCA-641", pdfName: "LNCA-641-Desarrollo e innovacion de productos alimentarios.pdf", nombre: "Desarrollo e Innovación de Productos Alimentarios", ha: 96, hi: 48, cr: 9, seriacion: "LNCA-533", instalaciones: "Laboratorio", temario: ["Formulación de alimentos funcionales", "Pruebas sensoriales y de aceptación", "Escalamiento de procesos alimentarios", "Desarrollo de prototipos nutritivos"] },
+                    { clave: "LNCS-639", pdfName: "LNCS-639-Farmacologia aplicada a la nutricion.pdf", nombre: "Farmacología Aplicada a la Nutrición", ha: 80, hi: 40, cr: 7.5, seriacion: "LNCS-503-4", instalaciones: "Aula", temario: ["Interacción fármaco-nutrientes", "Farmacocinética y nutrición", "Efectos secundarios sobre el estado nutricional", "Prescripción de suplementos sintéticos"] },
+                    { clave: "LNCS-642", pdfName: "LNCS-642-Nutricion y ejercicio fisico.pdf", nombre: "Nutrición y Ejercicio Físico", ha: 96, hi: 48, cr: 9, seriacion: "LNSC-207", instalaciones: "Aula / Gimnasio", temario: ["Fisiología del ejercicio", "Bioenergética del entrenamiento", "Suplementación e hidratación deportiva", "Composición corporal en atletas"] },
+                    { clave: "LNGII-636", pdfName: "LNGII-636-Interdisciplinaria II. Etica.pdf", nombre: "Interdisciplinaria II. Ética en las Ciencias", ha: 80, hi: 40, cr: 7.5, seriacion: "LNCA-425-D", instalaciones: "Aula", temario: ["Bioética en investigación con humanos", "Integridad científica", "Consentimiento informado en estudios", "Comités de ética e investigación"] },
+                    { clave: "LNGII-637", pdfName: "LNGII-637-Metodologia de la investigacion.pdf", nombre: "Metodología de la Investigación", ha: 96, hi: 48, cr: 9, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Diseños de investigación cuantitativa y cualitativa", "Protocolos de investigación en salud", "Recolección y análisis de datos", "Redacción de proyectos científicos"] },
+                    { clave: "LNSHE-640", pdfName: "LNSHE-640-Salud y Politicas Publicas aplicadas a la nutricion.pdf", nombre: "Salud y Políticas Públicas Aplicadas", ha: 80, hi: 40, cr: 7.5, seriacion: "LNCA-425-S", instalaciones: "Aula", temario: ["Evaluación de programas poblacionales", "Estrategias contra la obesidad y desnutrición", "Intervención nutricional comunitaria", "Legislación alimentaria vigente"] }
+                ]
+            },
+            {
+                semestre: 7,
+                materias: [
+                    { clave: "LNCS-745", pdfName: "LNCS-745-CLÍNICA DE DIETOTERAPIA II.pdf", nombre: "Clínica de Dietoterapia II", ha: 128, hi: 64, cr: 12, seriacion: "LNCS-638", instalaciones: "Aula / Laboratorio", temario: ["Dietoterapia en diabetes mellitus e hipertensión", "Dietoterapia en enfermedad renal crónica", "Manejo nutricional del paciente crítico", "Cuidado nutricional cardiovascular"] },
+                    { clave: "LNCA-747", pdfName: "LNCA-747-ALIMENTACIÓN SOSTENIBLE.pdf", nombre: "Alimentación Sostenible", ha: 80, hi: 40, cr: 7.5, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Dietas basadas en plantas y salud planetaria", "Producción agroecológica", "Impacto ambiental de la ganadería e industria", "Consumo local y de temporada"] },
+                    { clave: "LNCA-748", pdfName: "LNCA-748-ASEGURAMIENTO DE CALIDAD E INOCUIDAD DE ALIMENTOS.pdf", nombre: "Aseguramiento de Calidad en Alimentos", ha: 96, hi: 48, cr: 9, seriacion: "LNCA-533", instalaciones: "Laboratorio", temario: ["Sistemas ISO 22000 y Norma Oficial Mexicana", "Auditorías de inocuidad alimentaria", "Control estadístico de procesos", "Trazabilidad en la cadena alimentaria"] },
+                    { clave: "LNCA-750", pdfName: "LNCA-750-ALIMENTOS FUNCIONALES.pdf", nombre: "Alimentos Funcionales y Nutracéuticos", ha: 80, hi: 40, cr: 7.5, seriacion: "LNCA-210", instalaciones: "Aula / Laboratorio", temario: ["Bioactivos y fitoquímicos", "Probióticos, prebióticos y simbióticos", "Evidencia científica en salud preventiva", "Regulación y comercialización"] },
+                    { clave: "LNGII-743", pdfName: "LNGII-743-INTERDISCIPLINARIA III. SOSTENIBILIDAD.pdf", nombre: "Interdisciplinaria III. Sostenibilidad Global", ha: 80, hi: 40, cr: 7.5, seriacion: "LNGII-636", instalaciones: "Aula", temario: ["Objetivos de Desarrollo Sostenible (ODS)", "Seguridad alimentaria global", "Cambio climático y salud humana", "Consumo responsable"] },
+                    { clave: "LNGII-744", pdfName: "LNGII-744-SEMINARIO DE INVESTIGACIÓN.pdf", nombre: "Seminario de Investigación", ha: 96, hi: 48, cr: 9, seriacion: "LNGII-637", instalaciones: "Aula", temario: ["Desarrollo del proyecto de tesis", "Análisis bioestadístico aplicable", "Discusión de resultados", "Publicación y difusión de hallazgos"] },
+                    { clave: "LNGII-749", pdfName: "LNGII-749-EMPRENDIMIENTO.pdf", nombre: "Emprendimiento en Salud", ha: 80, hi: 40, cr: 7.5, seriacion: "LNGII-211", instalaciones: "Aula", temario: ["Modelos de negocio en nutrición", "Plan de empresa para consultorios", "Marketing digital y ética profesional", "Innovación en servicios de nutrición"] },
+                    { clave: "LNSHE-746", pdfName: "LNSHE- 746-ESTRATEGIAS PARA LA EDUCACIÓN EN SALUD Y NUTRICIÓN.pdf", nombre: "Estrategias para la Educación en Salud", ha: 80, hi: 40, cr: 7.5, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Técnicas didácticas en nutrición", "Diseño de campañas educativas", "Consejería y entrevista motivacional", "Educación nutricional a grupos vulnerables"] }
+                ]
+            },
+            {
+                semestre: 8,
+                materias: [
+                    { clave: "LNGII-851", pdfName: "LNGII-851-Genomica nutricional.pdf", nombre: "Genómica Nutricional", ha: 96, hi: 48, cr: 9, seriacion: "Ninguna", instalaciones: "Clínica de Nutrición", temario: ["Nutrigenética y nutrigenómica", "Epigenética y expresión génica por dieta", "Bioinformática aplicada a la nutrición", "Pruebas genéticas y nutrición personalizada"] },
+                    { clave: "LNCS-857", pdfName: "LNCS-857 Fundamentos de Nutricion Enteral y Parenteral.pdf", nombre: "Fundamentos de Nutrición Enteral y Parenteral", ha: 128, hi: 64, cr: 12, seriacion: "LNCS-745", instalaciones: "Aula / Laboratorio", temario: ["Indicaciones y vías de acceso enteral", "Formulación de mezclas parenterales", "Complicaciones metabólicas y mecánicas", "Monitoreo del paciente con soporte nutricional"] },
+                    { clave: "LNCS-853", pdfName: "LNCS-853 Integracion de Practicas en Nutricion Clinica.pdf", nombre: "Integración de Prácticas en Nutrición Clínica", ha: 128, hi: 64, cr: 12, seriacion: "LNCS-745", instalaciones: "Hospital / Clínica", temario: ["Pases de visita hospitalarios", "Atención nutricia de casos reales", "Manejo de expediente clínico", "Trabajo en equipo multidisciplinario"] },
+                    { clave: "LNCS-854", pdfName: "LNCS-854 Manejo Integral de la Obesidad.pdf", nombre: "Manejo Integral de la Obesidad", ha: 96, hi: 48, cr: 9, seriacion: "LNCS-745", instalaciones: "Aula / Clínica", temario: ["Fisiopatología del tejido adiposo", "Abordaje conductual y farmacológico", "Cirugía bariátrica y nutrición", "Prevención de recidivas en sobrepeso"] },
+                    { clave: "LNCS-855", pdfName: "LNCS-855 Integracion de Practicas en Nutricion Poblacional.pdf", nombre: "Integracion de Practicas en Nutricion Poblacional", ha: 128, hi: 64, cr: 12, seriacion: "LNCS-853", instalaciones: "Hospital / Clínica", temario: ["Atención en unidades de cuidados intensivos", "Manejo de patologías metabólicas complejas", "Seguimiento nutricional post-alta", "Presentación de casos clínicos avanzados"] },
+                    { clave: "LNGII-852", pdfName: "LNGII-852-Interdisciplinaria IV. La vida de todos y de todas.pdf", nombre: "Interdisciplinaria IV. La Vida de todos y de todas", ha: 80, hi: 40, cr: 7.5, seriacion: "LNGII-743", instalaciones: "Aula", temario: ["Dilemas de inicio y fin de la vida", "Cuidados paliativos y nutrición", "Autonomía del paciente", "Decisiones éticas al final de la vida"] },
+                    { clave: "LNGII-856", pdfName: "LNGII-856-Taller Sobre Insercion Laboral.pdf", nombre: "Taller sobre Inserción Laboral y Profesionalización", ha: 64, hi: 32, cr: 6, seriacion: "Ninguna", instalaciones: "Aula", temario: ["Currículum vitae y entrevista de trabajo", "Marca personal profesional", "Examen profesional y colegiación", "Oportunidades de posgrado e investigación"] }
+                ]
+            }
+        ];
+
+        let currentSemester = 1;
+        let selectedSubject = null;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderTabs();
+            renderSubjects(currentSemester);
+
+            // Hamburger menu
+            const hamburgerBtn = document.getElementById("hamburgerBtn");
+            const mainNav = document.getElementById("mainNav");
+
+            hamburgerBtn.addEventListener("click", () => {
+                hamburgerBtn.classList.toggle("active");
+                mainNav.classList.toggle("open");
+            });
+
+            // Cerrar menú al hacer clic en un enlace (móvil)
+            mainNav.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    hamburgerBtn.classList.remove("active");
+                    mainNav.classList.remove("open");
+                });
+            });
+
+            // Organigrama link
+            document.getElementById("organigramaLink").addEventListener("click", (e) => {
+                e.preventDefault();
+                openOrganigramaModal();
+            });
+        });
+
+        // Cerrar cualquier modal con tecla ESC
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeModal();
+                closeOrganigramaModal();
+            }
+        });
+
+        function renderTabs() {
+            const tabsContainer = document.getElementById("semesterTabs");
+            tabsContainer.innerHTML = "";
+            for (let i = 1; i <= 8; i++) {
+                const btn = document.createElement("button");
+                btn.className = `tab-btn ${i === currentSemester ? 'active' : ''}`;
+                btn.innerText = `${i}º Semestre`;
+                btn.onclick = () => switchSemester(i);
+                tabsContainer.appendChild(btn);
+            }
+        }
+
+        function switchSemester(semNum) {
+            currentSemester = semNum;
+            renderTabs();
+            renderSubjects(semNum);
+        }
+
+        function renderSubjects(semNum) {
+            const grid = document.getElementById("subjectsGrid");
+            grid.innerHTML = "";
+            const semData = curriculumData.find(s => s.semestre === semNum);
+
+            if (!semData || !semData.materias) {
+                grid.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: var(--text-muted);'>No hay materias registradas para este semestre.</p>";
+                return;
+            }
+
+            semData.materias.forEach(mat => {
+                const card = document.createElement("div");
+                card.className = "subject-card";
+                card.innerHTML = `
+                    <div>
+                        <span class="subject-code">${mat.clave}</span>
+                        <h4 class="subject-title">${mat.nombre}</h4>
+                        <div class="subject-details">
+                            <div><span><i class="fa-solid fa-clock"></i> Horas Docente:</span> <strong>${mat.ha} hrs</strong></div>
+                            <div><span><i class="fa-solid fa-user-clock"></i> Horas Indep.:</span> <strong>${mat.hi} hrs</strong></div>
+                            <div><span><i class="fa-solid fa-star"></i> Créditos:</span> <strong>${mat.cr}</strong></div>
+                            <div><span><i class="fa-solid fa-building-columns"></i> Sede:</span> <strong>${mat.instalaciones}</strong></div>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" style="width: 100%;" onclick='openModal(${JSON.stringify(mat)})'>
+                        <i class="fa-solid fa-eye"></i> Ver Temario Detallado
+                    </button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openModal(materia) {
+            selectedSubject = materia;
+            document.getElementById("modalCode").innerText = materia.clave;
+            document.getElementById("modalTitle").innerText = materia.nombre;
+            document.getElementById("modalHA").innerText = `${materia.ha} hrs`;
+            document.getElementById("modalHI").innerText = `${materia.hi} hrs`;
+            document.getElementById("modalCR").innerText = materia.cr;
+            document.getElementById("modalSeriacion").innerText = materia.seriacion;
+            document.getElementById("modalInstalaciones").innerText = materia.instalaciones;
+
+            const topicsList = document.getElementById("modalTopics");
+            topicsList.innerHTML = "";
+            
+            materia.temario.forEach(t => {
+                const li = document.createElement("li");
+                li.innerText = t;
+                topicsList.appendChild(li);
+            });
+
+            document.getElementById("subjectModal").classList.add("active");
+        }
+
+        function closeModal() {
+            document.getElementById("subjectModal").classList.remove("active");
+        }
+
+        function openOrganigramaModal() {
+            document.getElementById("organigramaModal").classList.add("active");
+        }
+
+        function closeOrganigramaModal() {
+            document.getElementById("organigramaModal").classList.remove("active");
+        }
+
+        function downloadSingleSubject() {
+            if (!selectedSubject) return;
+            const folderName = semesterFolders[currentSemester];
+            const pdfPath = `${folderName}/${selectedSubject.pdfName}`;
+            
+            const link = document.createElement("a");
+            link.href = pdfPath;
+            link.download = selectedSubject.pdfName;
+            link.target = "_blank";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
